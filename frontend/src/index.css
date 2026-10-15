@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  html.dark {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+
+  html.dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: Inter, system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-600 ring-offset-2 ring-offset-slate-50;
+  }
+
+  html.dark :focus-visible {
+    @apply ring-offset-slate-950;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm;
+  }
+
+  html.dark .card {
+    @apply bg-slate-900 border-slate-800;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm;
+  }
+
+  html.dark .card-elevated {
+    @apply bg-slate-900 border-slate-800;
+  }
+
+  .card-hover {
+    @apply transition-colors duration-150 hover:border-slate-300;
+  }
+
+  html.dark .card-hover {
+    @apply hover:border-slate-700;
+  }
+
+  .glass,
+  .glass-card {
+    @apply bg-white border border-slate-200;
+  }
+
+  html.dark .glass,
+  html.dark .glass-card,
+  html.dark .glass-dark {
+    @apply bg-slate-900 border-slate-800;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm text-white
+           bg-primary-700 hover:bg-primary-800 active:bg-primary-900 transition-colors duration-150;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm
+           text-slate-700 hover:bg-slate-100 transition-colors duration-150;
+  }
+
+  html.dark .btn-ghost {
+    @apply text-slate-200 hover:bg-slate-800;
+  }
+
+  .stat-badge {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 font-medium
+           transition-colors duration-150 hover:bg-slate-100 hover:text-slate-900;
+  }
+
+  html.dark .nav-item {
+    @apply text-slate-300 hover:bg-slate-800 hover:text-white;
+  }
+
+  .nav-item-active {
+    @apply bg-primary-50 text-primary-800 hover:bg-primary-50 hover:text-primary-800;
+  }
+
+  html.dark .nav-item-active {
+    @apply bg-primary-950 text-primary-100 hover:bg-primary-950 hover:text-primary-100;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2.5 rounded-lg border border-slate-200 bg-white
+           focus:border-primary-600 focus:ring-2 focus:ring-primary-100
+           outline-none transition-colors duration-150 text-sm;
+  }
+
+  html.dark .input-field {
+    @apply bg-slate-900 border-slate-700 text-slate-100 focus:ring-primary-900;
+  }
+
+  .hero-gradient {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm text-slate-900;
+    animation: none !important;
+    background-image: none !important;
+  }
+
+  html.dark .hero-gradient {
+    @apply bg-slate-900 border-slate-800 text-slate-100;
+  }
+
+  .gradient-mesh {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 160ms ease-out;
+  }
+
+  .animate-slide-up {
+    animation: fadeIn 160ms ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: fadeIn 160ms ease-out;
+  }
+
+  .animate-scale-in,
+  .animate-pulse-ring,
+  .animate-wave,
+  .animate-shimmer,
+  .animate-bounce-dot,
+  .animate-float,
+  .animate-float-slow,
+  .animate-float-delayed,
+  .animate-gradient-x,
+  .animate-glow-pulse {
+    animation: none !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-float-delayed {
+    display: none !important;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  html.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-700;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  }
+
+  .shadow-glow-primary,
+  .shadow-glow-sky,
+  .shadow-glow-accent {
+    box-shadow: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

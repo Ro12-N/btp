@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+.env
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+out/
+
+# IDE & AI Tools
+.vscode/
+.idea/
+.cursor/
+.kilo/
+.bolt/
+.pytest_cache/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (large files)
+*.pb
+*.h5
+*.pkl
+data/evaluation/*.wav
+data/evaluation/*.mp3
+
+# Database
+*.db
+*.sqlite3
+chroma_db/
+
+# Logs
+*.log
+logs/
+
+# Docker
+.docker/
+
+# Build / planning artefacts (not project code)
+plans/
+plan_prompts/
+
+# Debug / one-off scripts & output files
+response_debug.json
+fix_json_cols.py
+migrate_patient.py
+checked_priority_urls.json
+urls_inventory.json
